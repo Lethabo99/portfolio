@@ -1,0 +1,338 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Developer Background</title>
+     <style>
+	      body{
+			margin: 0;
+			height:100vh;
+				width:100vw;     <!-- this makes your page fill the screen.   vw=/* width */ of screen vh= fills the /* height */-->
+				display:flex;
+				justify content: center;
+				align-items: center;
+				font-family:Arial, san-serif;
+				background-image: radial-gradient(ellipse at center, Skyblue 5%, blue 15%, skyblue 55%);
+			}
+	          
+	         /* defing the gradient colors below*/
+			#grad {
+			     width:80%;
+				 height: 100vh;
+				 border-radius: 10px;
+				 background image: radial-gradient(ellipse at center, skyblue 5%, blue 15%, skyblue 50%);
+				 display:flex;
+				 justify-content:center;
+				 align-items:center;
+				 color: white;
+				 font-size: 1rem;
+				 font-weight:bold;
+			}
+	 
+	     .collapse-panel{
+		     border:1px ;
+			 border-radius:4px;
+			 overflow:hidden;
+			 margin:20px 0;
+			 max-width:500px;
+			 justify-content:center;
+				 align-items:center;
+			 
+
+		 }
+		  .panel-header {
+      padding: 10px 15px;
+      background-color: #f5f5f5;
+	  color: #3498db;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+	  justify-content:center;
+	  align-items:center;
+    }
+
+    .panel-header:hover {
+      background-color: #e9e9e9;
+	  text-color: black;
+	  justify-content:center;
+	  
+	  align-items:center;
+    }
+
+    .panel-content {
+      padding: 0px;
+      max-height: 500px;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, padding 0.3s ease;
+      background-color: teal;
+	  justify-content:center;
+	  align-items:center;
+    }
+		 
+			
+			.section{
+				 width: 100%;
+				 height: 100vh;
+				 <!-- full viewport height -->
+				 /* color:white; */
+				 font-size:1rem;
+				 display:flex;
+				 justify-content: center;
+				 slign-items: center;
+				 /*alight the text to the top + center of page */
+				 text-aligtn:center;
+				 padding-top:60px;
+				 /*adding space avoid being hidden fixed nav*/
+			}
+			
+			
+			
+			/*Below we creating a multi-colored liner background*/
+			/*
+			.one{
+				backgroupd-color:#DCDCDC;
+			}
+			.two{
+				backgroupd-color:#D3D3D3;
+			}
+			.three{
+				background-color:#DCDCDC;
+			}
+			.four{
+				background-color:#D3D3D3;
+			}
+			.five{
+			     background-color:#c4c4c4;
+			}       */
+			
+			.nav{
+				position:fixed;
+				top:25px;
+				width:100%;
+				height: 30px;
+				background-color: teal;
+				display:flex;
+				justify-content: center;
+				padding:10px 0;
+				z-index:100;
+			}
+		
+			H1{
+			font-family: verdana;
+			text-size: 300%;
+			}
+			
+			/*Puting images inside section3 */
+			.frame{
+			     width: 5vh;
+				 height: 5vh;
+				 border:3px solid black;
+				 overflow:hidden;
+				 object-fit: cover;
+			}
+			.frame img{
+			     width:5vh;
+				 height:5vhx;
+			}
+			
+			
+			
+	 </style> 
+</head>
+<body>
+     <div class="nav">
+        <!--   <a href...tag is used to create a link within the same page  -->
+	    <!--   Set the href Attribute: Set the href attribute of the anchor tag
+		to “#section1” (replace “section1” with the desired ID) to link to a specific section.   -->
+	 <a href="#section1" class="button-style">About</a>
+	 <a href="#section2" class="button-style">Projects</a>
+	 <a href="#section3" class="button-style">Cert. skills</a>
+	 <a href="#section4" class="button-style">Peer Validation</a>
+	 <a href="#section5" class="button-style">Contacts</a>
+     </div>
+	 
+	 
+	 
+	 
+	 <div class="section one" id="section1">
+	 <!-- the retrieval of grad class from CSS-->
+	 <div id="grad">
+	 <h1>Lethabo Phokanoka</h1><br>
+	 <p style="color:red"><i>Software Developer</i></p>
+         <div style="white-space: pre-wrap:">
+		     <br></br>
+			 <div class="collapse-panel">
+    <div class="panel-header" text-color="black">Life Of a Developer</div>
+    <div class="panel-content">
+      I am a detailed-oriented Software Developer & ICT support technician with hands on experience in 
+helpdesk support, technical troubleshooting, and service delivery within corporate and public sector 
+environments. Skilled in resolving hardware, software, and network issues within SLA requirements.  
+Strong in documentation problem solving and work well in team collaborations.  <br></br>
+     <p>I am passionate about Cloud technologies and more recently CyberSecurity. </p>
+      <p style="color:red;"><b>#OpentoWork!</b></p> </div>
+	  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const panels = document.querySelectorAll('.collapse-panel');
+      
+      panels.forEach(panel => {
+        const header = panel.querySelector('.panel-header');
+        const content = panel.querySelector('.panel-content');
+        
+        header.addEventListener('mouseenter', function() {
+          // First get the natural height of the content
+          content.style.display = 'block';
+          const contentHeight = content.scrollHeight + 'px';
+          content.style.display = '';
+          
+          // Then animate to that height
+          content.style.maxHeight = contentHeight;
+          content.style.padding = '15px';
+        });
+        
+        header.addEventListener('mouseleave', function() {
+          content.style.maxHeight = '0';
+          content.style.padding = '0';
+        });
+      });
+    });
+  </script>
+  </div>
+	 </div>
+	 
+	 
+	 </div>
+		 
+	 
+     <div class="section two" id="section2">Section 2: Projects
+	 <div class="collapse-panel">
+    <div class="panel-header">Career Projects</div>
+    <div class="panel-content">
+         <ul>
+		     <li>Car Dealership</li>
+			 <li>Career Portfolio</li>
+			 <li>Business Website</li>
+			 <li>C# game</li>
+			 <li>C# Game</li>
+			 <li>Android mobile Game</li>
+		 </ul>
+         </div>
+	 </div>
+	
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const panels = document.querySelectorAll('.collapse-panel');
+      
+      panels.forEach(panel => {
+        const header = panel.querySelector('.panel-header');
+        const content = panel.querySelector('.panel-content');
+        
+        header.addEventListener('mouseenter', function() {
+          // First get the natural height of the content
+          content.style.display = 'block';
+          const contentHeight = content.scrollHeight + 'px';
+          content.style.display = '';
+          
+          // Then animate to that height
+          content.style.maxHeight = contentHeight;
+          content.style.padding = 'px';
+        });
+        
+        header.addEventListener('mouseleave', function() {
+          content.style.maxHeight = '0';
+          content.style.padding = '0';
+        });
+      });
+    });
+	</script>
+	</div>
+	
+	 <div class="section two" id="section3">Section 3: Certificates_Skills
+	 <br></br>
+	 <div>
+	 <img src="S.PNG" height="180vh" width="180vh">  
+	 <br></br>
+	 <img src="AZ.PNG" height="180vh" width="180vh">  
+	 <br></br>
+	 <img src="IS.PNG" height="180vh" width="180vh">  
+	 <br></br>
+	 <img src="intro.PNG" height="180vh" width="180vh">  
+	 </div>
+	 
+	 
+	</div>
+     <div class="section four" id="section4" >Section 4:Peer Validation<br></br>
+	 <br></br>
+	
+			    <table style="width: 35%; height:30%;" ><tr><td>The "Problem Solver" collegue: <br></br>"I worked alongside Lethabo on a complex overhaul of our client's 
+				backend, and i was consistently impressed by their logical approach to technical debt. Lethabo doesn't just write
+				 code, but he creates real world solutions to problems on hand. "</td><td></td></tr>
+				 
+				 <tr><td></td><td>The "Designer/UX" Partner:<br></br> Pavia20022 as the cyphers like to call him has a unique ability 
+				 to bridge the gap between aesthetic design and functional development. Collaborating on the Active Life gym application he took the 
+				 teams initial mapping of wireframes and transformed them into intuitive, responsive experience that exceeds the client's expextations.
+				 Their attention to detail-down to the micro-interactions- makes their stand out. 
+				 They are proactive and constantlyt requesting for feedback and interaction with the users on the usability of the App.</td></tr>
+				 
+				 <tr><td>The Team Leader: <br></br>
+				 "Working with [Name] has been a highlight of my year. Their ability to take a complex project brief and turn it into something polished and 
+				 actionable is unmatched. Not only is their work pixel-perfect, but they also bring
+				 a proactive, 'can-do' attitude to the team. They are a fantastic collaborator who consistently meets tight deadlines."
+				 </td><td></td></tr>
+				 </table>
+     </div>	 
+	 
+	 
+	 <div class="section five" id="Section5" max-height="10%";>
+	     <i><b>Section 5: Contact information</b><br>
+		 <p> Cell: 081 274 4164....Email Address: phokes32@gmail.com</p></i>
+	 </div>
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+</body>
+</HTML>
